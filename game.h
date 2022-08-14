@@ -11,6 +11,7 @@
 #include "score.h"
 #include <vector>
 #include "scoreboard.h"
+#include "DB_OPT/db_opt.h"
 
 class Game : public QGraphicsView
 {
@@ -43,7 +44,7 @@ private:
     QString* path;
     QString username;
     uint    level;
-
+    DB_OPT  dbOpt;
 };
 
 #endif // GAME_H

@@ -10,8 +10,13 @@
 #include <QTextStream>
 #include <QDateTime>
 
+#include <iostream>
+
 Game::Game(const QString& username, const uint level)
 {
+    dbOpt.CreateTable();
+    dbOpt.InsertDB("大牛", 1, 10);
+
     this->username = username;
     this->level = level;
 

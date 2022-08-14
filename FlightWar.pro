@@ -1,4 +1,5 @@
 QT       += core gui
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -41,3 +42,9 @@ RESOURCES += \
 FORMS += \
     gamesetingtweight.ui \
     scoreboard.ui
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/build-DB_OPT-Desktop_Qt_5_12_12_MinGW_64_bit-Debug/release/ -lDB_OPT
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/build-DB_OPT-Desktop_Qt_5_12_12_MinGW_64_bit-Debug/debug/ -lDB_OPT
+
+INCLUDEPATH += $$PWD/DB_OPT
+DEPENDPATH += $$PWD/DB_OPT
